@@ -7,18 +7,18 @@ from ultralytics import YOLO
 
 model = YOLO("yolov8s.pt")
 
-results = model.train(data=data,
-                      epochs=100,
+results = model.train(data="data.yaml",
+                      epochs=65,
                       imgsz=640,
-                      batch=8,
-                      patience=20,
-                      workers=8,
+                      name="latest",
                       device=0,
-                      project=runs,
+                      save_period=5,
+                      exist_ok = True
                       )
 
 model.export(format="onnx")
 
 import pandas as pd
-pd.read_csv('runs/detect/train/results.csv')
-print(result)
+pd.read_csv("latest/results.csv")
+
+print(results)
