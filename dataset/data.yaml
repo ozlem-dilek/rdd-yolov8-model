@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 7
+names: ['D00', 'D10', 'D20', 'D40', 'D43', 'D44', 'D50']
+
+roboflow:
+  workspace: eric-tam-oz6si
+  project: road-damages-detection
+  version: 7
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/eric-tam-oz6si/road-damages-detection/dataset/7
